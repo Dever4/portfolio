@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Innovexa Solutions - Professional Services Portfolio">
+  <title>Innovexa Solutions - Your Success, Our Innovation</title>
+  <!-- Tailwind CSS for styling -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Slick Carousel for Slideshow -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <!-- Custom CSS Styles -->
+  <style>
+    body {
+      background-color: #1f2937; /* Dark background */
+      color: #f3f4f6; /* Light text */
+      font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
+    }
+    nav, footer {
+      background-color: #111827; /* Darker nav and footer */
+    }
+    a:hover {
+      color: #3b82f6; /* Hover effect with blue color */
+    }
+    .btn-hover:hover {
+      background-color: #3b82f6;
+      transition: background-color 0.3s ease;
+    }
+    .social-icons a {
+      color: #f3f4f6;
+      margin: 0 15px;
+      font-size: 1.8rem;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #3b82f6;
+    }
+    .hover-card:hover {
+      transform: translateY(-5px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .cta-button {
+      background-color: #2563eb;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .cta-button:hover {
+      background-color: #3b82f6;
+    }
+    /* Slide-In Animation */
+    .slide-in {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+    .slide-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Live Chat Widget */
+    .chat-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #2563eb;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .chat-widget i {
+      color: #fff;
+      font-size: 1.8rem;
+    }
+    .chat-widget:hover {
+      background-color: #3b82f6;
+    }
+    /* Chat Box */
+    .chat-box {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      display: none;
+      flex-direction: column;
+      padding: 16px;
+    }
+    .chat-header {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #2563eb;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .chat-messages {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+    .chat-input {
+      display: flex;
+      margin-top: 10px;
+    }
+    .chat-input input {
+      width: 80%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .chat-input button {
+      width: 20%;
+      background-color: #2563eb;
+      color: white;
+      padding: 8px;
+      border-radius: 4px;
+      margin-left: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    .chat-input button:hover {
+      background-color: #3b82f6;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .cta-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="shadow py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="#" class="text-3xl font-bold text-white">Innovexa Solutions</a>
+      <div>
+        <a href="#about" class="mx-4 text-gray-300 hover:text-blue-500">About Us</a>
+        <a href="#services" class="mx-4 text-gray-300 hover:text-blue-500">Services</a>
+        <a href="#portfolio" class="mx-4 text-gray-300 hover:text-blue-500">Portfolio</a>
+        <a href="#contact" class="mx-4 text-gray-300 hover:text-blue-500">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-800 text-white py-20 slide-in">
+    <div class="container mx-auto text-center">
+      <h1 class="text-5xl font-bold">Innovating Solutions for Your Business Growth</h1>
+      <p class="mt-4 text-xl">We help businesses navigate the future by providing cutting-edge services and solutions that ensure their success in an ever-changing market.</p>
+      <a href="#contact" class="cta-button">Connect With Us</a>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-20 bg-gray-900 slide-in">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-10 text-white">About Us</h2>
+      <i class="fas fa-info-circle text-blue-400 text-4xl mb-4"></i>
+      <p class="max-w-2xl mx-auto text-gray-300 leading-relaxed">
+        Innovexa Solutions is your trusted partner in delivering tailored, innovative solutions for businesses looking to succeed in a competitive world. With expertise across multiple industries, we’ve helped hundreds of companies achieve scalable growth and operational excellence.
+      </p>
+      <p class="max-w-2xl mx-auto text-gray-300 mt-6 leading-relaxed">
+        Whether you need expert consulting, marketing insights, or state-of-the-art development services, our team will work with you every step of the way to ensure long-lasting success. Let us show you why we are the leading choice for businesses looking to innovate.
+      </p>
+      <a href="#contact" class="cta-button">Get Started Today</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-10 text-white">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="hover-card card p-6 bg-gray-900 rounded-lg shadow-lg">
+          <i class="fas fa-comments text-blue-400 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-blue-400">Consulting</h3>
+          <p class="mt-4 text-gray-300">We offer expert advice on business strategy, helping businesses overcome operational challenges and improve performance in a competitive market.</p>
+        </div>
+        <div class="hover-card card p-6 bg-gray-900 rounded-lg shadow-lg">
+          <i class="fas fa-bullhorn text-blue-400 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-blue-400">Marketing Strategy</h3>
+          <p class="mt-4 text-gray-300">Our marketing experts craft targeted campaigns designed to boost brand awareness, increase engagement, and drive conversions for your business.</p>
+        </div>
+        <div class="hover-card card p-6 bg-gray-900 rounded-lg shadow-lg">
+          <i class="fas fa-code text-blue-400 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-blue-400">Development</h3>
+          <p class="mt-4 text-gray-300">We specialize in web and application development, delivering scalable, secure, and high-performance platforms for businesses of all sizes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-20 bg-gray-900">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-10 text-white">Our Work</h2>
+      <p class="mb-8 text-gray-300">Here are some of the innovative solutions we've delivered for our clients.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <img src="https://source.unsplash.com/random/300x200?corporate" alt="Project 1" class="rounded-lg shadow-lg hover:shadow-xl">
+        <img src="https://source.unsplash.com/random/300x200?marketing" alt="Project 2" class="rounded-lg shadow-lg hover:shadow-xl">
+        <img src="https://source.unsplash.com/random/300x200?technology" alt="Project 3" class="rounded-lg shadow-lg hover:shadow-xl">
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Slideshow -->
+  <section id="testimonials" class="py-20 bg-gray-800">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-10 text-white">What Our Clients Say</h2>
+      <div class="testimonial-slider">
+        <!-- Testimonial 1 -->
+        <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+          <i class="fas fa-user-circle text-blue-400 text-4xl mb-4"></i>
+          <p class="text-gray-300 italic leading-relaxed">"Innovexa Solutions provided the best consulting services we've ever had. Their strategies transformed our business."</p>
+          <h4 class="mt-4 text-lg font-semibold text-blue-400">- Sarah Williams, CEO at Innovate Solutions</h4>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+          <i class="fas fa-user-circle text-blue-400 text-4xl mb-4"></i>
+          <p class="text-gray-300 italic leading-relaxed">"Their marketing expertise was pivotal in growing our brand. I highly recommend them for any business looking to expand."</p>
+          <h4 class="mt-4 text-lg font-semibold text-blue-400">- Michael Johnson, Marketing Director at TechWorld</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section with Social Media -->
+  <section id="contact" class="py-20">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-6 text-white">Get In Touch</h2>
+      <p class="text-gray-300 max-w-xl mx-auto mb-8">Reach out to us through any of the platforms below. We're always happy to connect and explore new opportunities to help your business grow.</p>
+      
+      <!-- Social Media Icons -->
+      <div class="mt-10 social-icons">
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://wa.me/yourwhatsappnumber" target="_blank" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://t.me/yourtelegramusername" target="_blank" aria-label="Telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-gray-800 text-gray-400 text-center">
+    <p>&copy; 2024 Innovexa Solutions. All rights reserved.</p>
+  </footer>
+
+  <!-- Live Chat Widget -->
+  <div class="chat-widget">
+    <i class="fas fa-comments"></i>
+  </div>
+
+  <!-- Chat Box -->
+  <div class="chat-box">
+    <div class="chat-header">Live Chat</div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Type a message...">
+      <button id="chatSendBtn">Send</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // Testimonial Slider
+      $('.testimonial-slider').slick({
+        dots: true,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 3000
+      });
+
+      // Chat Widget Toggle
+      $('.chat-widget').on('click', function() {
+        $('.chat-box').toggle();
+      });
+
+      // Scroll Animation
+      const sliders = document.querySelectorAll('.slide-in');
+      const appearOptions = {
+        threshold: 0.1
+      };
+
+      const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            return;
+          } else {
+            entry.target.classList.add('visible');
+            appearOnScroll.unobserve(entry.target);
+          }
+        });
+      }, appearOptions);
+
+      sliders.forEach(slider => {
+        appearOnScroll.observe(slider);
+      });
+
+      // Chat messaging simulation
+      $('#chatSendBtn').click(function() {
+        const message = $('#chatInput').val();
+        if (message.trim() !== '') {
+          $('#chatMessages').append('<p><strong>You:</strong> ' + message + '</p>');
+          $('#chatInput').val('');
+        }
+      });
+    });
+  </script>
+
+  <!-- Add Socket.io client-side script -->
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    const socket = io();
+
+    $('#chatSendBtn').click(function() {
+        const message = $('#chatInput').val();
+        if (message.trim() !== '') {
+            socket.emit('sendMessage', message);
+            $('#chatInput').val('');
+        }
+    });
+
+    socket.on('receiveMessage', (message) => {
+        $('#chatMessages').append('<p><strong>Rep:</strong> ' + message + '</p>');
+    });
+</script>
+
+</body>
+</html>
